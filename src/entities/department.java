@@ -2,43 +2,47 @@ package entities;
 
 import java.io.Serializable;
 
-public class department implements Serializable {
+public class Department implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer Id;
-    private String Name;
+    private Integer id;
+    private String name;
 
-    public department() {
+    public Department() {
     }
 
-    public department(Integer id, String name) {
-        Id = id;
-        Name = name;
+    public Department(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public static long getSerialversionuid() {
+        return serialVersionUID;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((Id == null) ? 0 : Id.hashCode());
-        result = prime * result + ((Name == null) ? 0 : Name.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
         return result;
     }
 
@@ -50,23 +54,23 @@ public class department implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        department other = (department) obj;
-        if (Id == null) {
-            if (other.Id != null)
+        Department other = (Department) obj;
+        if (id == null) {
+            if (other.id != null)
                 return false;
-        } else if (!Id.equals(other.Id))
+        } else if (!id.equals(other.id))
             return false;
-        if (Name == null) {
-            if (other.Name != null)
+        if (name == null) {
+            if (other.name != null)
                 return false;
-        } else if (!Name.equals(other.Name))
+        } else if (!name.equals(other.name))
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "departamento [Id=" + Id + ", Name=" + Name + "]";
+        return "Department [id=" + id + ", name=" + name + "]";
     }
 
 }
