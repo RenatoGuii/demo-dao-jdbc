@@ -16,7 +16,7 @@ public class DB {
 
 	// Deixe apenas os métodos que for usar
 
-	public static Connection abrirConexao() {
+	public static Connection getConnection() {
 
 		try {
 			if (conn == null) {
@@ -32,7 +32,7 @@ public class DB {
 
 	}
 
-	public static void fecharConexao() {
+	public static void closeConnection() {
 		if (conn != null) {
 			try {
 				conn.close();
@@ -42,7 +42,7 @@ public class DB {
 		}
 	}
 
-	public static void fecharStatement(Statement st) {
+	public static void closeStatement(Statement st) {
 		if (st != null) {
 			try {
 				st.close();
@@ -52,7 +52,7 @@ public class DB {
 		}
 	}
 
-	public static void fecharResultSent(ResultSet rs) {
+	public static void closeResultSent(ResultSet rs) {
 		if (rs != null) {
 			try {
 				rs.close();
