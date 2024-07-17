@@ -1,4 +1,4 @@
-package conexao;
+package database;
 
 public class DbIntegrityException extends RuntimeException {
 
